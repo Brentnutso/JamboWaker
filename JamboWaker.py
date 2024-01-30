@@ -3,7 +3,17 @@ from ping3 import ping
 import time
 import datetime
 from datetime import timedelta
+
 from extras import pc_mac, pc_ip, phone_ip, time_ranges
+
+## Time ranges for each day of the week to set status as "away" and wait for phone to connect to network to send WOL packet
+#time_ranges = {
+#    'Sunday' : [('00:00', '00:00')],
+#    'Monday': [('00:00', '00:00')],
+#    'Tuesday': [('00:00', '00:00')],
+#    'Wednesday': [('00:00', '00:00')],
+#    'Thursday': [('00:00', '00:00')]
+#}
 
 def log_prints(data):
     f = open("output.txt", "a") # Open file in append mode
@@ -45,7 +55,7 @@ def send_wol_packet(mac_address):
     subprocess.call(['wakeonlan', mac_address])
     print_time("Sent WOL packet to PC.")
     print_time("Welcome home!")
-    log("wol", "Sent WOL packet to the PC. Welcome home!")
+    log("wol", "Sent WOL packet to the PC. Welcome home cunt")
     log_status_true()
     return
 
@@ -171,7 +181,6 @@ def log_status_true(): # Only after wol is sent
 
 def print_time(message):
     log_prints(f"[{datetime.datetime.now().strftime('%H:%M:%S')}]: {message}")
-
 
 # show that it has not been sent in the WOL Log at start
 print_time("JamboWaker reporting for duty")

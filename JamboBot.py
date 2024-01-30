@@ -10,7 +10,8 @@ from watchdog.events import FileSystemEventHandler
 import tracemalloc
 import os
 import sys
-from extras import token, serverID, channel_id
+
+from extras import token, serverID
 
 tracemalloc.start()
 
@@ -21,8 +22,6 @@ def log_prints(data):
     f.close() # Close file in append mode
 
 log_prints(f"====================={datetime.datetime.now().strftime('%d/%m/%Y')}=====================")
-
-
 
 # Discord client initialization
 intents = discord.Intents.default()
@@ -186,7 +185,7 @@ class FileChangeHandler(FileSystemEventHandler):
         self.bot = bot
 
     def on_modified(self, event):
-
+        channel_id = 1169502274142343198
         channel = self.bot.get_channel(channel_id)
         if channel is None:
             print_time("Channel not found.")
@@ -212,7 +211,6 @@ class FileChangeHandler(FileSystemEventHandler):
             self.sleeping_sent = True
         else:
             self.sleeping_sent = False
-
 
 def start_observer(bot):
     path = os.path.join(".", "logs")
