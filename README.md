@@ -35,3 +35,8 @@ to
 should allow the code to sleep correctly over weekends.  
 
 Rule of thumb it that it's ["Day before the start of weekend", "Day after the end of weekend"])
+
+## Running
+Just run WakerBot.py and Waker.py should open automatically alongside it. 
+_Should_ work on Windows although have not tested the restart commmand.
+Built for Linux.
