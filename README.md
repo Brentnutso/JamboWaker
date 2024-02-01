@@ -5,18 +5,21 @@ Pretty simple code. Currently requires seperate device (Using a Linux server) to
 
 ## Customizable Variables
 ### WakerBot.py
-
-token = "Discord bot token ID" # Bots token for connection
-serverID = "Discord Server ID" # What server you want the bot to be connected to
+Create your bot from [Discord's Developers Portal](https://discord.com/developers/applications/)
+```
+token = "Discord bot token ID"   # Bot token for connection
+serverID = "Discord Server ID"   # What server you want the bot to be connected to
 channelID = "Discord Channel ID" # What log channel you want the bot to be connected to
-
+```
 ### PCWaker.py
+```
+pc_mac = "MAC Address of the PC to wake up"   # MAC address of your personal computer
+pc_ip = 'IP Address of the PC to wake up'     # IP Address of your personal computer
+phone_ip = ['IP Address of Phone #1', IP Address of Phone #2 '] # The IP Addresses' to check for, listed in an array (For example listing both 5G, 2.4G)
+```
 
-pc_mac = "MAC Address of the PC to wake up" # MAC address of your personal computer
-pc_ip = 'IP Address of the PC to wake up'
-phone_ip = ['IP Address of Phone to locate #1', IP Address of Phone to locate #2 '] # The IP Addresses' to check for, listed in an array (For example listing both 5G, 2.4G)
-
- Time ranges for each day of the week to set status as "away" and wait for phone to connect to network to send WOL packet
+Time ranges for each day of the week to set status as "away" and wait for phone to connect to network to send WOL packet
+```
 time_ranges = {
     'Sunday' : [('00:00', '00:00')],
     'Monday': [('00:00', '00:00')],
@@ -24,3 +27,11 @@ time_ranges = {
     'Wednesday': [('00:00', '00:00')],
     'Thursday': [('00:00', '00:00')]
 }
+```
+Note that this was built assuming that Friday and Saturday are weekdays instead of Saturday and Sunday, so changing 
+```Weekends = ['Thursday', 'Sunday']```
+to 
+```Weekends = ['Friday', 'Monday']```
+should allow the code to sleep correctly over weekends.  
+
+Rule of thumb it that it's ["Day before the start of weekend", "Day after the end of weekend"])
