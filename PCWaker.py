@@ -6,6 +6,17 @@ from datetime import timedelta
 
 from extras import pc_mac, pc_ip, phone_ip, time_ranges
 
+# pc_mac = 'MAC Address of the PC'
+# pc_ip = 'IP Address of PC'
+# phone_ip ['IP Address of Phone', 'Extra if needed']
+# time_ranges = {
+#    'Sunday' : [('00:00', '00:00')],
+#    'Monday': [('00:00', '00:00')],
+#    'Tuesday': [('00:00', '00:00')],
+#    'Wednesday': [('00:00', '00:00')],
+#    'Thursday': [('00:00', '00:00')]
+#}
+
 # If Weekends are Friday to Saturday, then Weekends = ['Thursday', 'Sunday']
 # If Weekends are Saturday to Sunday, then Weekends = ['Friday', 'Monday']
 # Rule of thumb it that it's ["Day before the start of weekend", "Day after the end of weekend"])
