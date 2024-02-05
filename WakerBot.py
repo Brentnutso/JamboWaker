@@ -13,6 +13,11 @@ from extras import token, serverID, channelID, pc_mac
 
 tracemalloc.start()
 
+# token = 'discord bot token'
+# serverID = 'Server to log to'
+# channelID = 'channel to log to'
+# pc_mac = 'MAC address of the PC'
+
 botlog = "enter name of log channel here"
 
 def log_prints(data):
